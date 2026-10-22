@@ -1,0 +1,17 @@
+{
+  "name": "disk-space-diff-reporter",
+  "version": "0.1.0",
+  "description": "Takes two directory snapshots and reports size changes, additions, and removals.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {}
+}
