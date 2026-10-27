@@ -39,3 +39,10 @@ The trade-off: this library does not walk the filesystem. You hand it snapshots;
 
 - `diffSnapshots(beforeEntries, afterEntries)` — returns an array of diff objects sorted by path. Each object has `path`, `status` (one of `grew`, `shrank`, `appeared`, `vanished`, `changed`), `beforeSize`, `afterSize`, `beforeType`, `afterType`.
 - `compareEntries(before, after)` — compares a single pair of entries (either may be `undefined`) and returns one diff object. Useful when you only care about one path.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
